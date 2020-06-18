@@ -7,6 +7,6 @@ Given an input (m,n) matrix **A** (A has m rows and n columns) and an input vect
 
 ## Requirements to run on a linux machine 
 1. Install llvm 
-1. Build Halide 
- * **---> Find out more about halide and how to set it up with llvm step by step at https://github.com/halide/Halide**
+1. Build Halide <br/>
+    **---> Find out more about halide and how to set it up with llvm step by step at https://github.com/halide/Halide**
  
