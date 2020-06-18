@@ -3,7 +3,7 @@ Halide implementation of GEMV : General Matrix-Vector Multiplication (a Level 2 
 
 ## GEMV Routine
 
-Given an input (m,n) matrix A (A has m rows and n columns) and an input vector X of dimension n, GEMV computes a vector Y of dimension m, defined by: Y = A * X. In other words, component i of Y is the dot product of row i of A (a vector of dimension n) and vector X.
+Given an input (m,n) matrix **A** (A has m rows and n columns) and an input vector **X** of dimension n, GEMV computes a vector **Y** of dimension m, defined by: **Y = A * X**. In other words, component i of Y is the dot product of row i of A (a vector of dimension n) and vector X.
 
 ## Requirements to run on a linux machine 
 1. Install llvm 
