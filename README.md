@@ -8,4 +8,4 @@ Given an input (m,n) matrix A (A has m rows and n columns) and an input vector X
 ## Requirements to run on a linux machine 
 1. Install llvm 
 1. Build Halide 
- 1. **Findout more about halide and how to set it up with llvm  at https://github.com/halide/Halide **
+  **Findout more about halide and how to set it up with llvm  at https://github.com/halide/Halide**
