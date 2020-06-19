@@ -13,11 +13,16 @@ Given an input (m,n) matrix **A** (A has m rows and n columns) and an input vect
 ## How to run
 * Clone repositiry 
 ```
+git clone https://github.com/DallelKh/GEMV_Halide_C.git
 ```
 * Go to Repository root
 ```
+cd  GEMV_Halide_C/
 ```
 * Set Script permission to allow execution
 ```
-chmod 0700 run.sh
+chmod +700 run.sh
 ```
+## Martix ,Vector Data 
+Matrix A and Vector X are read from the file ./files/input
+
