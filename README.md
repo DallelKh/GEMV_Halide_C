@@ -23,7 +23,7 @@ cd  GEMV_Halide_C/
 ```
 chmod +700 run.sh
 ```
-* Execute Script run.sh
+* Execute the Script run.sh
 ```
 ./run.sh
 ```
@@ -34,7 +34,7 @@ to change the Data :
 ```
 nano ./files/input
 ```
-Modify here knowing that **first line represensts the dimensions m,n** respectively ,then comes the Matrix A(m,n) and the Vector X(n) 
+Modify there knowing that **first line represensts the dimensions m,n** respectively ,then comes the Matrix **A(m,n)** and the Vector **X(n)** 
 ```
 5 3
 
