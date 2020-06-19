@@ -13,4 +13,14 @@ Given an input (m,n) matrix **A** (A has m rows and n columns) and an input vect
 ## How to run
 ```
 cd llvm-build
-``` 
+```
+* Clone repositiry 
+```
+```
+* Go to Repository root
+```
+```
+* Set Script permission to allow execution
+```
+chmod 0700 script.sh
+```
