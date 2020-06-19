@@ -34,8 +34,20 @@ to change the Data :
 ```
 nano ./files/input
 ```
-where the first line represensts the dimensions m,n respectively 
+Modify here knowing that **first line represensts the dimensions m,n** respectively ,then comes the Matrix A(m,n) and the Vector X(n) 
 ```
+5 3
+
+1 4 1
+5 6 1
+6 1 1
+7 2 0
+8 3 0
+
+3
+7
+4
+
 ```
 
 
