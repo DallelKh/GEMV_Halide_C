@@ -23,6 +23,19 @@ cd  GEMV_Halide_C/
 ```
 chmod +700 run.sh
 ```
+* Execute Script run.sh
+```
+./run.sh
+```
+
 ## Martix ,Vector Data 
-Matrix A and Vector X are read from the file ./files/input
+**Matrix A and Vector X are read from the file ./files/input**
+to change the Data :
+```
+nano ./files/input
+```
+where the first line represensts the dimensions m,n respectively 
+```
+```
+
 
