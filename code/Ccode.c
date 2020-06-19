@@ -46,12 +46,11 @@ void gemv(int A[m][n],int X[n],int Y[m]){
         int H[m];
 
         //Retrieving results calculated by halide implementation
-        output=NULL;
-        output = fopen("..\\files\\in.txt","r");
-        if (output == NULL){
-               printf("\nError! can't open output file");
-               exit(1);
-            }
+        output = fopen("..\\files\\output.txt","r");
+    	if (output == NULL){
+       		printf("\nError! opening file");
+       		exit(1);
+    	}
          for (j = 0; j <m; j++){
                 //get  int
                 fscanf(output,"%d", &temp);
