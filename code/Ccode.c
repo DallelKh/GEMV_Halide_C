@@ -46,11 +46,12 @@ void gemv(int A[m][n],int X[n],int Y[m]){
         int H[m];
 
         //Retrieving results calculated by halide implementation
-        output = fopen("..\\files\\output.txt","r");
+        output = fopen("./files/output","r");
     	if (output == NULL){
-       		printf("\nError! opening file");
+       		printf("Error! opening output file\n");
        		exit(1);
     	}
+	printf("____Comparing C and Halide Results\n");
          for (j = 0; j <m; j++){
                 //get  int
                 fscanf(output,"%d", &temp);
@@ -66,9 +67,9 @@ void gemv(int A[m][n],int X[n],int Y[m]){
 int main()
 
 {    //opening Input file
-    input = fopen("..\\files\\input.txt","r");
+    input = fopen("./files/input","r");
     if (input == NULL){
-       printf("\nError! opening file");
+       printf("Error! opening input file\n");
        exit(1);
     }
 
@@ -91,8 +92,8 @@ int main()
 
    //Checking with Halide Results
    if(validate_halide(Y))
-    printf("\nResults Match\n");
-    else printf("\nResults Do Not Match!\n");
+    printf("____Results Match\n");
+    else printf("____Results Do Not Match!\n");
 
    return 0;
 }
