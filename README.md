@@ -11,6 +11,13 @@ Given an input (m,n) matrix **A** (A has m rows and n columns) and an input vect
     **---> Find out more about halide and how to set it up with llvm step by step at https://github.com/halide/Halide**
  
 ## How to run
+* Clone repositiry 
 ```
-cd llvm-build
-``` 
+```
+* Go to Repository root
+```
+```
+* Set Script permission to allow execution
+```
+chmod 0700 run.sh
+```
