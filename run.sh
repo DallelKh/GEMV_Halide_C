@@ -1,5 +1,9 @@
+
+#get path to halide
+HALIDE="$1"
+
 echo "____Compiling ./code/Halidecode.c "
-g++ ./code/Halidecode.cpp -g -L ../Halide/bin -I ../Halide/include -I ../Halide/tools  -lHalide -ldl -lpthread -std=c++11 -o ./exe/Hexe
+g++ ./code/Halidecode.cpp -g -L "$HALIDE"/bin -I "$HALIDE"/include -I "$HALIDE"/tools  -lHalide -ldl -lpthread -std=c++11 -o ./exe/Hexe
 echo "____Executing Halide implementation "
 LD_LIBRARY_PATH=../Halide/bin ./exe/Hexe
 echo "____Compiling ./code/Ccode.c "
