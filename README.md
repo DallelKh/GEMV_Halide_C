@@ -49,8 +49,8 @@ Modify there knowing that **first line represensts the dimensions m,n** respecti
 4
 
 ```
-## Martix ,Vector Data 
-**Execution results are either**
+
+**Execution results if Halide path is correct are either**
 
 ```
 $ ./run.sh  ../Halide/
