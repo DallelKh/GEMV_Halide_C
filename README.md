@@ -53,7 +53,7 @@ Modify there knowing that **first line represensts the dimensions m,n** respecti
 **Execution results are either**
 
 ```
-ubuntu@DESKTOP-7GCSPPO:~/GEMV_Halide_C$ ./run.sh
+$ ./run.sh  ../Halide/
 ____Compiling ./code/Halidecode.c
 ____Executing Halide implementation
 ____Halide Results are written to output file
@@ -68,7 +68,7 @@ ____Results Do Not Match!
 **Or**
 
 ```
-ubuntu@DESKTOP-7GCSPPO:~/GEMV_Halide_C$ ./run.sh
+$ ./run.sh  ../Halide/
 ____Compiling ./code/Halidecode.c
 ____Executing Halide implementation
 ____Halide Results are written to output file
