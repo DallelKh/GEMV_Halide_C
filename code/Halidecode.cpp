@@ -3,31 +3,18 @@
 #include <stdio.h>
 #include <fstream>
 #include <ostream>
+
+const int dim1 = 5;
+const int dim2 =3;
+
 using namespace std;
 using namespace Halide;
 
-void calculate_gemv(int m,int n,Halide::Buffer<int> A_Halide,Halide::Buffer<int> X_Halide,Halide::Buffer<int> Y_Halide)
-{   //Declaring function gemv and needed variables
-    Var i,j;
-    Func gemv;
-    //Rdom to make a reduction on the operations according to number of columns
-    RDom r(0, n);
-    // + a very useful Reduction helper is sum()
-    gemv(i, j) = sum( A_Halide(r, j) * X_Halide(i) ) ;
-    gemv.parallel(j);
-
-    Y_Halide = gemv.realize(m, n);
-
-
-    return;
-
-
-}
-
 int main(int argc, char **argv)
-{
-    int n=0,m=0;
-    int i ,j;
+{    
+    //m,n will contain the actual dimmension of the matrix
+    int n,m;
+    int i,j;//for loops
     //getting dimensions m,n from input file
     fstream fs("./files/input", std::fstream::in);
     if (!fs.is_open())
@@ -36,9 +23,9 @@ int main(int argc, char **argv)
     fs >> n ;
 	m=2;n=2;
     //creating the Matrix A ,Vector X,Y
-    int A[2][2];
-    int X[2];
-    int Y[2];
+    int A[dim1][dim2];
+    int X[dim2];
+    int Y[dim1];
 
     //reading Matrix A and Vector X from input file
     for ( i = 0; i < m; i++ )
@@ -54,15 +41,23 @@ int main(int argc, char **argv)
             }*/
     fs.close();
 
+   
+   //Declaring function gemv and needed variables
+    Var d,e;
+    Func gemv;
+    //Rdom to make a reduction on the operations according to number of columns
+    RDom r(0, n);
     //Creating Halide buffers
-
     Halide::Buffer<int> A_Halide(A);
     Halide::Buffer<int> X_Halide(X);
     Halide::Buffer<int> Y_Halide(Y);
+    // + a very useful Reduction helper is sum()
+    gemv(d,e) = sum( A_Halide(r, e) * X_Halide(d) ) ;
+    gemv.parallel(e);
 
-    //Calcul du produit avec func
-    calculate_gemv(i,j,A_Halide,X_Halide,Y_Halide);
-        // Or equivalently using a compile-time loop in our C++:
+    Y_Halide = gemv.realize(m, n);
+
+       // this is equivalent using a compile-time loop in our C++:
         // for (int i = 0; i < m; i++) {
         //      for(int i = 0; i < m; i++) {
         //   Y[j] += A[i][j] * X[j];
