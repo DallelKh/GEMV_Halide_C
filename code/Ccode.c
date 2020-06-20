@@ -1,13 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Global Declarations
+    // Global Declarations
 
     int n,m; //Dimensions of Matrix and Vector
     FILE *input; //  pointer to file that contains Matrix,Vector Values
     FILE *output; //pointer to file that contains Halide Result
 
-void retriveData(int A[n][m],int X[n]){
+void retriveData(int A[m][n],int X[n]){
     int temp,i,j;
     // filling A
 
@@ -21,9 +21,10 @@ void retriveData(int A[n][m],int X[n]){
     //filling X
 
     for (j = 0; j <n; j++){
-        //get row
+        //get integer
             fscanf(input,"%d", &temp);
             X[j]=temp;
+
     }
     return ;
 
@@ -32,11 +33,14 @@ void retriveData(int A[n][m],int X[n]){
 
 void gemv(int A[m][n],int X[n],int Y[m]){
 
-    int i,j;
+    int i,j,a,x;
     for (i = 0; i < m; i++){ Y[i]=0;
+
         for (j = 0; j <n; j++){
-            Y[i] += A[i][j] * X[j];
-        }
+             a= A[i][j] ;
+             x= X[j];
+	    Y[i] +=  a*x;
+	 }
     }
     return ;
 }
@@ -56,9 +60,8 @@ void gemv(int A[m][n],int X[n],int Y[m]){
                 //get  int
                 fscanf(output,"%d", &temp);
                 H[j]= temp;
-
-                if(Y[j]!=H[j])
-                    return 0;
+               if(Y[j]!=H[j])
+                 return 0;
                }
            fclose(output);
         return 1;
@@ -77,7 +80,6 @@ int main()
     fscanf(input,"%d", &m);
     fscanf(input,"%d", &n);
 
-
    //Declaring and allocating  matrix A and vectors X,Y
     int A[m][n];
     int X[n];
@@ -93,7 +95,7 @@ int main()
    //Checking with Halide Results
    if(validate_halide(Y))
     printf("____Results Match\n");
-    else printf("____Results Do Not Match!\n");
+    else printf("____Results Do Not Match! \n ----> re-Check the Dimensions and Data in input File\n");
 
    return 0;
 }
