@@ -23,9 +23,9 @@ cd  GEMV_Halide_C/
 ```
 chmod +700 run.sh
 ```
-* Execute the Script run.sh
+* Execute the Script run.sh and add path to Halide like this (in case the repository was cloned in the same directory where Halide build directory resides) or provide yours accordingly
 ```
-./run.sh
+./run.sh  ../Halide/
 ```
 
 ## Martix ,Vector Data 
@@ -49,5 +49,32 @@ Modify there knowing that **first line represensts the dimensions m,n** respecti
 4
 
 ```
+## Martix ,Vector Data 
+**Execution results are either**
 
+```
+$ ./run.sh  ../Halide/
+____Compiling ./code/Halidecode.c
+____Executing Halide implementation
+____Halide Results are written to output file
+____Compiling ./code/Ccode.c
+____Executing C implementation
+____Comparing C and Halide Results
+____Results Do Not Match!
+ ----> re-Check the Dimensions and Data in input File
+
+```
+ 
+**Or**
+
+```
+$ ./run.sh  ../Halide/
+____Compiling ./code/Halidecode.c
+____Executing Halide implementation
+____Halide Results are written to output file
+____Compiling ./code/Ccode.c
+____Executing C implementation
+____Comparing C and Halide Results
+____Results Match
+```
 
